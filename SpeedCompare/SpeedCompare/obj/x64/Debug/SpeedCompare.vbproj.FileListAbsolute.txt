@@ -8,3 +8,5 @@ c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedComp
 c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Debug\SpeedCompare.exe
 c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Debug\SpeedCompare.xml
 c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Debug\SpeedCompare.pdb
+c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedCompare\bin\x64\Debug\kbwaveRegistryLogic.dll
+c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Debug\SpeedCompare.vbprojResolveAssemblyReference.cache

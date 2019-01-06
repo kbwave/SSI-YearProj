@@ -100,6 +100,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\clsResult.vb" />
+    <Compile Include="Class\clsSetting.vb" />
     <Compile Include="Module\modDefine.vb" />
     <Compile Include="Window\windowMain.vb">
       <SubType>Form</SubType>
@@ -148,12 +150,10 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy /D /S /Y "C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\SpeedCompare" "%25USERPROFILE%25\Documents\GitHub\SSI-YearProj\SpeedCompare\"</PreBuildEvent>
+    <PreBuildEvent>xcopy /D /S /Y "%25USERPROFILE%25\Documents\Visual Studio 2013\Projects\SpeedCompare" "%25USERPROFILE%25\Documents\GitHub\SSI-YearProj\SpeedCompare\"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

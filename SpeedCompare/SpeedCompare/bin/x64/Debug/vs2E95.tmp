@@ -6,16 +6,9 @@ SpeedCompare
 </name>
 </assembly>
 <members>
-<member name="P:SpeedCompare.clsResult.ResultListA">
+<member name="P:SpeedCompare.clsResult.ResultList">
 	<summary>
- 測定結果Aのリスト
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:SpeedCompare.clsResult.ResultListB">
-	<summary>
- 測定結果Bのリスト
+ 計測結果のリスト
  </summary>
 	<value></value>
 	<returns></returns>
@@ -27,27 +20,15 @@ SpeedCompare
 	<value></value>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.AddResultA(System.Int64)">
+</member><member name="M:SpeedCompare.clsResult.AddResult(System.Int64)">
 	<summary>
- A部分の結果を追加
+ 結果を追加
  </summary>
 	<param name="result"></param>
 	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.AddResultB(System.Int64)">
+</member><member name="M:SpeedCompare.clsResult.GetAverage">
 	<summary>
- B部分の結果を追加
- </summary>
-	<param name="result"></param>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.GetAverageA">
-	<summary>
- A部分結果の平均値を取得
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.GetAverageB">
-	<summary>
- B部分結果の平均値を取得
+ 結果の平均値を取得
  </summary>
 	<returns></returns>
 	<remarks></remarks>

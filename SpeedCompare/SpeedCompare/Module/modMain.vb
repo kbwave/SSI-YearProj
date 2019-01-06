@@ -78,6 +78,18 @@ Module modMain
 	''' <summary>
 	''' ウォッチタイマーの時間を取得
 	''' </summary>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Public Function GetWatchTimer() As Long
+		_stopWatch.Stop()
+
+		Return _stopWatch.ElapsedTicks
+		'Return _stopWatch.ElapsedMilliseconds
+	End Function
+
+	''' <summary>
+	''' ウォッチタイマーの時間を取得
+	''' </summary>
 	''' <param name="StopFlag"></param>
 	''' <remarks></remarks>
 	Public Function GetWatchTimer(Optional ByVal StopFlag As Boolean = True) As String
@@ -87,6 +99,72 @@ Module modMain
 
 		Return _stopWatch.ElapsedTicks.ToString
 	End Function
+
+	''' <summary>
+	''' 比較種類のリストを取得
+	''' </summary>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Public Function GetCompareTypeList() As List(Of String)
+		Dim compareList As List(Of String) = Nothing
+		compareList = New List(Of String)
+
+		'Dim test As String = (1).ToString("D2")
+
+		compareList.Add(modDefine.CompareTypeIndex.StringVsStringBuilder.GetHashCode.ToString("D2") & " " & modDefine.COMPTYPE_STRING_STRINGBUILDER)
+
+		Return compareList
+	End Function
+
+	''' <summary>
+	''' 試行開始
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Public Function StartTesting(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+
+		Select Case settingInfo.CompareType
+			Case modDefine.CompareTypeIndex.StringVsStringBuilder
+				resultInfo = StringVsStringBuilder(settingInfo)
+
+		End Select
+
+		Return resultInfo
+	End Function
+
+	''' <summary>
+	''' StringとStringBuilderを比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function StringVsStringBuilder(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		resultInfo = New clsResult
+
+		For testCnt As Integer = 1 To settingInfo.TestNum
+			modMain.StartStopWatch()
+			For loopCnt As Long = 1& To settingInfo.LoopNum
+
+			Next
+			System.Threading.Thread.Sleep(100)
+			resultInfo.AddResultA(modMain.GetWatchTimer())
+			MessageBox.Show(modMain.GetWatchTimer(True))
+
+			modMain.StartStopWatch()
+			For loopCnt As Long = 1& To settingInfo.LoopNum
+
+			Next
+			System.Threading.Thread.Sleep(500)
+			resultInfo.AddResultB(modMain.GetWatchTimer())
+			MessageBox.Show(modMain.GetWatchTimer(True))
+		Next
+
+		Return resultInfo
+	End Function
+
 
 #End Region
 

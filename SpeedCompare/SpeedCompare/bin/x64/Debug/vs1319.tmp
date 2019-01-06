@@ -1,0 +1,112 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SpeedCompare
+</name>
+</assembly>
+<members>
+<member name="P:SpeedCompare.clsSetting.LoopNum">
+	<summary>
+ 繰り返し回数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsSetting.TestNum">
+	<summary>
+ 試行回数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsSetting.CompareType">
+	<summary>
+ 比較を行う種類
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.clsSetting">
+	<summary>
+ 設定関係を管理
+ </summary>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.modDefine">
+	<summary>
+ 定義モジュール
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.#ctor">
+	<summary>
+ インスタンス
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.Preparation">
+	<summary>
+ 準備
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.InitCotrols">
+	<summary>
+ コントロールを初期化
+ </summary>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.windowMain">
+	<summary>
+ 速度比較画面
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.Main">
+	<summary>
+ エントリーポイント
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.Preparation">
+	<summary>
+ 準備
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.Terminate">
+	<summary>
+ 後処理
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.StartStopWatch">
+	<summary>
+ ストップウォッチを開始
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.GetWatchTimer(System.Boolean)">
+	<summary>
+ ウォッチタイマーの時間を取得
+ </summary>
+	<param name="StopFlag"></param>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.GetCompareTypeList">
+	<summary>
+ 比較種類のリストを取得
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.modMain">
+	<summary>
+ 本アプリのメインモジュール
+ </summary>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.My.Resources.Resources.ResourceManager">
+	<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member><member name="P:SpeedCompare.My.Resources.Resources.Culture">
+	<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member><member name="T:SpeedCompare.My.Resources.Resources">
+	<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+</members>
+</doc>
