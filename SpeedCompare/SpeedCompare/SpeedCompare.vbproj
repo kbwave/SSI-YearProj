@@ -153,7 +153,11 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy /D /S /Y "%25USERPROFILE%25\Documents\Visual Studio 2013\Projects\SpeedCompare" "%25USERPROFILE%25\Documents\GitHub\SSI-YearProj\SpeedCompare\"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /D /S /Y "%25USERPROFILE%25\Documents\Visual Studio 2013\Projects\SpeedCompare" "%25USERPROFILE%25\Documents\GitHub\SSI-YearProj\SpeedCompare\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

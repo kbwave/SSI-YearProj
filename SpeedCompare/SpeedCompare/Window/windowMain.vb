@@ -105,7 +105,7 @@ Public Class windowMain
 	''' </summary>
 	''' <param name="resultInfo"></param>
 	''' <remarks></remarks>
-	Private Sub AppendResult(ByVal resultInfo As clsResult)
+	Private Sub AppendResultToGrid(ByVal resultInfo As clsResult)
 
 	End Sub
 

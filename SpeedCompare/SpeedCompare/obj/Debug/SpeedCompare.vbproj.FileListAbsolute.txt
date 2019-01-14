@@ -1,1 +1,11 @@
 c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedCompare\bin\Debug\SpeedCompare.exe.config
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\bin\Debug\SpeedCompare.exe.config
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\bin\Debug\SpeedCompare.exe
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\bin\Debug\SpeedCompare.pdb
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\bin\Debug\SpeedCompare.xml
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\obj\Debug\SpeedCompare.Resources.resources
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\obj\Debug\SpeedCompare.windowMain.resources
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\obj\Debug\SpeedCompare.vbproj.GenerateResource.Cache
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\obj\Debug\SpeedCompare.exe
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\obj\Debug\SpeedCompare.xml
+C:\Users\p-user\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\obj\Debug\SpeedCompare.pdb
