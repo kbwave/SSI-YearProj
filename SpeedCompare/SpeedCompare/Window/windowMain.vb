@@ -30,8 +30,7 @@ Public Class windowMain
 	''' <remarks></remarks>
 	Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnTesting.Click, btnSave.Click
 		If sender.Equals(Me.btnTesting) Then
-			Dim resultInfo As clsResult = Nothing
-			resultInfo = modMain.StartTesting(Me.MakeSettingInfo)
+			StartTesting()
 
 		ElseIf sender.Equals(Me.btnSave) Then
 
@@ -67,8 +66,7 @@ Public Class windowMain
 	''' </summary>
 	''' <remarks></remarks>
 	Private Sub InitCotrols()
-
-		'比較の種類コンボボックス
+		' 比較の種類コンボボックス
 		With Me.cbxCompareType
 			.Items.Clear()
 
@@ -76,8 +74,23 @@ Public Class windowMain
 				.Items.Add(compareItem)
 			Next
 
-			'デフォはString V.S. StringBuilderで
+			' デフォはString V.S. StringBuilderで
 			.SelectedIndex = modDefine.CompareTypeIndex.StringVsStringBuilder.GetHashCode - 1
+		End With
+
+		' 比較結果のグリッド
+		With Me.grdResult
+			.RowHeadersVisible = False
+			.AllowUserToAddRows = False
+
+			.Rows.Clear()
+			.ColumnCount = modDefine.grdResultCol.Num
+
+			.Columns(modDefine.grdResultCol.TypeName).HeaderText = modDefine.GRID_RESULT_TITLE_TYPENAME
+			.Columns(modDefine.grdResultCol.LoopNum).HeaderText = modDefine.GRID_RESULT_TITLE_LOOPNUM
+			.Columns(modDefine.grdResultCol.TestNum).HeaderText = modDefine.GRID_RESULT_TITLE_TESTNUM
+			.Columns(modDefine.grdResultCol.ResultA).HeaderText = modDefine.GRID_RESULT_TITLE_RESULTA
+			.Columns(modDefine.grdResultCol.ResultB).HeaderText = modDefine.GRID_RESULT_TITLE_RESULTB
 		End With
 
 	End Sub
@@ -94,6 +107,7 @@ Public Class windowMain
 		With settingInfo
 			.LoopNum = CInt(Me.numLoop.Value)
 			.CompareType = Me.cbxCompareType.SelectedIndex + 1
+			.CompareName = modMain.GetCompareName(.CompareType)
 			.TestNum = CInt(Me.numTesting.Value)
 		End With
 
@@ -101,14 +115,39 @@ Public Class windowMain
 	End Function
 
 	''' <summary>
+	''' 試行開始してグリッドに結果を表示
+	''' </summary>
+	''' <remarks></remarks>
+	Private Sub StartTesting()
+		Dim resultInfo As clsResult = Nothing
+		resultInfo = modMain.StartTesting(Me.MakeSettingInfo)
+
+		AppendResult(resultInfo)
+	End Sub
+
+	''' <summary>
 	''' 結果をグリッドへ追加
 	''' </summary>
 	''' <param name="resultInfo"></param>
 	''' <remarks></remarks>
-	Private Sub AppendResultToGrid(ByVal resultInfo As clsResult)
+	Private Sub AppendResult(ByVal resultInfo As clsResult)
+		Dim addedRowIndex As Integer = 0
 
+		With Me.grdResult
+			addedRowIndex = .Rows.Add()
+
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.TypeName).ValueType = GetType(String)
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.TypeName).Value = modMain.GetCompareName(Me.cbxCompareType.SelectedIndex)
+
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.LoopNum).Value = Me.numLoop.Value.ToString
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.TestNum).Value = Me.numTesting.Value.ToString
+
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.ResultA).Value = resultInfo.GetAverageA
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.ResultB).Value = resultInfo.GetAverageB
+		End With
 	End Sub
 
+	
 #End Region
 
 End Class

@@ -69,12 +69,6 @@ SpeedCompare
  </summary>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:SpeedCompare.modMain.GetCompareName(System.Int32)">
-	<summary>
-	</summary>
-	<param name="dicKey"></param>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="M:SpeedCompare.modMain.StartTesting(SpeedCompare.clsSetting)">
 	<summary>
  試行開始
