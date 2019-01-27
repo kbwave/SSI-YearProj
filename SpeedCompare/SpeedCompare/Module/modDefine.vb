@@ -8,6 +8,9 @@ Module modDefine
 
 	Public Const COMPTYPE_STRING_STRINGBUILDER As String = "String V.S. StringBuilder"
 
+
+	Public Const NO_DATA_TEXT As String = "0：結果なし"
+
 #End Region
 
 #Region "Enumerate"

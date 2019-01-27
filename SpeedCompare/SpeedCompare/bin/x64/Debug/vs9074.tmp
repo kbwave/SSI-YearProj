@@ -6,7 +6,57 @@ SpeedCompare
 </name>
 </assembly>
 <members>
-<member name="M:SpeedCompare.modMain.Main">
+<member name="P:SpeedCompare.clsResult.ResultListA">
+	<summary>
+ 測定結果Aのリスト
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsResult.ResultListB">
+	<summary>
+ 測定結果Bのリスト
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsResult.ResultNum">
+	<summary>
+ 測定結果数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.AddResultA(System.Int64)">
+	<summary>
+ A部分の結果を追加
+ </summary>
+	<param name="result"></param>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.AddResultB(System.Int64)">
+	<summary>
+ B部分の結果を追加
+ </summary>
+	<param name="result"></param>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.GetAverageA">
+	<summary>
+ A部分結果の平均値を取得
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.GetAverageB">
+	<summary>
+ B部分結果の平均値を取得
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.clsResult">
+	<summary>
+ 結果を管理
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.Main">
 	<summary>
  エントリーポイント
  </summary>
@@ -61,83 +111,6 @@ SpeedCompare
 </member><member name="T:SpeedCompare.modMain">
 	<summary>
  本アプリのメインモジュール
- </summary>
-	<remarks></remarks>
-</member><member name="P:SpeedCompare.clsResult.ResultListA">
-	<summary>
- 測定結果Aのリスト
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:SpeedCompare.clsResult.ResultListB">
-	<summary>
- 測定結果Bのリスト
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:SpeedCompare.clsResult.ResultNum">
-	<summary>
- 測定結果数
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:SpeedCompare.clsResult.AverageA">
-	<summary>
- 結果Aの平均を取得
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:SpeedCompare.clsResult.AverageB">
-	<summary>
- 結果Bの平均を取得
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.ClearResult">
-	<summary>
- 結果をクリア
- </summary>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.AddResultA(System.Int64)">
-	<summary>
- A部分の結果を追加
- </summary>
-	<param name="result"></param>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.AddResultB(System.Int64)">
-	<summary>
- B部分の結果を追加
- </summary>
-	<param name="result"></param>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.GetAverage(System.Double,System.Int64)">
-	<summary>
- 値を追加した際の平均値を取得
- </summary>
-	<param name="average">更新対象の平均値</param>
-	<param name="result">追加を行う結果</param>
-	<returns>更新後の平均値</returns>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.GetAverageA">
-	<summary>
- A部分結果の平均値の文字列を取得
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.clsResult.GetAverageB">
-	<summary>
- B部分結果の平均値の文字列を取得
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="T:SpeedCompare.clsResult">
-	<summary>
- 結果を管理
  </summary>
 	<remarks></remarks>
 </member><member name="P:SpeedCompare.clsSetting.LoopNum">
@@ -200,11 +173,6 @@ SpeedCompare
  設定情報を作成
  </summary>
 	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.windowMain.StartTesting">
-	<summary>
- 試行開始してグリッドに結果を表示
- </summary>
 	<remarks></remarks>
 </member><member name="M:SpeedCompare.windowMain.AppendResult(SpeedCompare.clsResult)">
 	<summary>

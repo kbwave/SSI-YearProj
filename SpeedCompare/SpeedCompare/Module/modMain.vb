@@ -1,4 +1,5 @@
 ﻿Imports System.Diagnostics
+Imports System.Text
 
 ''' <summary>
 ''' 本アプリのメインモジュール
@@ -143,21 +144,24 @@ Module modMain
 	Private Function StringVsStringBuilder(ByVal settingInfo As clsSetting) As clsResult
 		Dim resultInfo As clsResult = Nothing
 		resultInfo = New clsResult
+		Dim stringStr As String = String.Empty
+		Dim stringBuildStr As StringBuilder = Nothing
 
 		For testCnt As Integer = 1 To settingInfo.TestNum
 			modMain.StartStopWatch()
 			For loopCnt As Long = 1& To settingInfo.LoopNum
-
+				stringStr &= "a"
 			Next
-			System.Threading.Thread.Sleep(100)
+			'System.Threading.Thread.Sleep(100)
 			resultInfo.AddResultA(modMain.GetWatchTimer())
 			MessageBox.Show(modMain.GetWatchTimer(True))
 
+			stringBuildStr = New StringBuilder
 			modMain.StartStopWatch()
 			For loopCnt As Long = 1& To settingInfo.LoopNum
-
+				stringBuildStr.Append("a")
 			Next
-			System.Threading.Thread.Sleep(500)
+			'System.Threading.Thread.Sleep(500)
 			resultInfo.AddResultB(modMain.GetWatchTimer())
 			MessageBox.Show(modMain.GetWatchTimer(True))
 		Next

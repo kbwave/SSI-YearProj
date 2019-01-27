@@ -22,6 +22,12 @@ Public Class clsResult
 				Me._resultListA.Clear()
 				Me._resultListA = Nothing
 			End If
+
+			If Not Me._resultListB Is Nothing Then
+				Me._resultListB.Clear()
+				Me.ResultListB = Nothing
+			End If
+
 		End If
 		Me.disposedValue = True
 	End Sub
@@ -97,6 +103,32 @@ Public Class clsResult
 		End Get
 	End Property
 
+	Private _averageA As Double = 0.0
+	''' <summary>
+	''' 結果Aの平均を取得
+	''' </summary>
+	''' <value></value>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Public ReadOnly Property AverageA() As Double
+		Get
+			Return _averageA
+		End Get
+	End Property
+
+	Private _averageB As Double = 0.0
+	''' <summary>
+	''' 結果Bの平均を取得
+	''' </summary>
+	''' <value></value>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Public ReadOnly Property AverageB() As Double
+		Get
+			Return _averageB
+		End Get
+	End Property
+
 
 #End Region
 
@@ -113,11 +145,25 @@ Public Class clsResult
 #Region "Function"
 
 	''' <summary>
+	''' 結果をクリア
+	''' </summary>
+	''' <remarks></remarks>
+	Public Sub ClearResult()
+		Me._resultListA.Clear()
+		Me._resultListB.Clear()
+		Me._averageA = 0.0
+		Me._averageB = 0.0
+	End Sub
+
+	''' <summary>
 	''' A部分の結果を追加
 	''' </summary>
 	''' <param name="result"></param>
 	''' <remarks></remarks>
 	Public Sub AddResultA(ByVal result As Long)
+		' 平均を更新(最後に一気にすると数によってはオーバーフローしそうなので)
+		Me._averageA = GetAverage(Me._averageA, result)
+		' 単純に追加
 		Me._resultListA.Add(result)
 	End Sub
 
@@ -127,32 +173,53 @@ Public Class clsResult
 	''' <param name="result"></param>
 	''' <remarks></remarks>
 	Public Sub AddResultB(ByVal result As Long)
+		' 平均を更新
+		Me._averageB = GetAverage(Me._averageB, result)
+		' 単純に追加
 		Me._resultListB.Add(result)
 	End Sub
 
 	''' <summary>
-	''' A部分結果の平均値を取得
+	''' 値を追加した際の平均値を取得
+	''' </summary>
+	''' <param name="average">更新対象の平均値</param>
+	''' <param name="result">追加を行う結果</param>
+	''' <returns>更新後の平均値</returns>
+	''' <remarks></remarks>
+	Private Function GetAverage(ByVal average As Double, ByVal result As Long) As Double
+		Dim sum As Double = 0.0
+		Dim averageNew As Double = 0.0
+
+		sum = average * Me.ResultNum
+		sum += CDbl(result)
+		averageNew = sum / (Me.ResultNum + 1)
+
+		Return averageNew
+	End Function
+
+	''' <summary>
+	''' A部分結果の平均値の文字列を取得
 	''' </summary>
 	''' <returns></returns>
 	''' <remarks></remarks>
 	Public Function GetAverageA() As String
 		If Me.ResultNum <> 0 Then
-
+			Return Me._averageA.ToString
 		Else
-			Return "結果なし"
+			Return modDefine.NO_DATA_TEXT
 		End If
 	End Function
 
 	''' <summary>
-	''' B部分結果の平均値を取得
+	''' B部分結果の平均値の文字列を取得
 	''' </summary>
 	''' <returns></returns>
 	''' <remarks></remarks>
 	Public Function GetAverageB() As String
 		If Me.ResultNum <> 0 Then
-
+			Return Me._averageB.ToString
 		Else
-			Return "結果なし"
+			Return modDefine.NO_DATA_TEXT
 		End If
 	End Function
 

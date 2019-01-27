@@ -79,11 +79,11 @@ Partial Class windowMain
 		'grdResult
 		'
 		Me.grdResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.grdResult.Location = New System.Drawing.Point(3, 164)
+		Me.grdResult.Location = New System.Drawing.Point(3, 167)
 		Me.grdResult.Margin = New System.Windows.Forms.Padding(0, 3, 3, 3)
 		Me.grdResult.Name = "grdResult"
 		Me.grdResult.RowTemplate.Height = 21
-		Me.grdResult.Size = New System.Drawing.Size(185, 186)
+		Me.grdResult.Size = New System.Drawing.Size(185, 183)
 		Me.grdResult.TabIndex = 4
 		'
 		'numTesting
@@ -125,17 +125,18 @@ Partial Class windowMain
 		'DataGridView1
 		'
 		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Location = New System.Drawing.Point(194, 164)
+		Me.DataGridView1.Location = New System.Drawing.Point(194, 167)
 		Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 3, 0, 3)
 		Me.DataGridView1.Name = "DataGridView1"
 		Me.DataGridView1.RowTemplate.Height = 21
-		Me.DataGridView1.Size = New System.Drawing.Size(185, 186)
+		Me.DataGridView1.Size = New System.Drawing.Size(185, 183)
 		Me.DataGridView1.TabIndex = 9
 		'
 		'lblCompareA
 		'
 		Me.lblCompareA.AutoSize = True
 		Me.lblCompareA.Location = New System.Drawing.Point(9, 143)
+		Me.lblCompareA.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
 		Me.lblCompareA.Name = "lblCompareA"
 		Me.lblCompareA.Size = New System.Drawing.Size(40, 18)
 		Me.lblCompareA.TabIndex = 10
@@ -145,6 +146,7 @@ Partial Class windowMain
 		'
 		Me.lblCompareB.AutoSize = True
 		Me.lblCompareB.Location = New System.Drawing.Point(197, 143)
+		Me.lblCompareB.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
 		Me.lblCompareB.Name = "lblCompareB"
 		Me.lblCompareB.Size = New System.Drawing.Size(40, 18)
 		Me.lblCompareB.TabIndex = 11

@@ -30,8 +30,7 @@ Public Class windowMain
 	''' <remarks></remarks>
 	Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnTesting.Click, btnSave.Click
 		If sender.Equals(Me.btnTesting) Then
-			Dim resultInfo As clsResult = Nothing
-			resultInfo = modMain.StartTesting(Me.MakeSettingInfo)
+			StartTesting()
 
 		ElseIf sender.Equals(Me.btnSave) Then
 
@@ -99,6 +98,17 @@ Public Class windowMain
 
 		Return settingInfo
 	End Function
+
+	''' <summary>
+	''' 試行開始してグリッドに結果を表示
+	''' </summary>
+	''' <remarks></remarks>
+	Private Sub StartTesting()
+		Dim resultInfo As clsResult = Nothing
+		resultInfo = modMain.StartTesting(Me.MakeSettingInfo)
+
+		AppendResult(resultInfo)
+	End Sub
 
 	''' <summary>
 	''' 結果をグリッドへ追加
