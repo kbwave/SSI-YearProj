@@ -11,12 +11,14 @@ private:
 	int _capacity = 0;
 
 	void UpdateStringMemory(void);
+	void UpdateString(char *);
 
 public:
 	//Constructor
 	kbwaveStringBuilder();
 	kbwaveStringBuilder(char* string);
-	kbwaveStringBuilder(char* string, int capacity);
+	//kbwaveStringBuilder(char* string, int capacity);
+	
 	//Destructor
 	~kbwaveStringBuilder();
 
@@ -24,5 +26,8 @@ public:
 	void Append(char* string);
 	//Set Memory
 	void Capacity(int bytes);
+	int Capacity();
+
+	char* ToString();
 };
 #endif //_KBWAVESTRINGBUILDER_H_
