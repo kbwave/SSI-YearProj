@@ -31,13 +31,13 @@ Partial Class windowMain
 		Me.lblTesting = New System.Windows.Forms.Label()
 		Me.btnTesting = New System.Windows.Forms.Button()
 		Me.btnSave = New System.Windows.Forms.Button()
-		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
 		Me.lblCompareA = New System.Windows.Forms.Label()
-		Me.lblCompareB = New System.Windows.Forms.Label()
+		Me.chkTestAlsoClear = New System.Windows.Forms.CheckBox()
+		Me.btnClear = New System.Windows.Forms.Button()
+		Me.chkShowDetailWindw = New System.Windows.Forms.CheckBox()
 		CType(Me.numLoop, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.grdResult, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.numTesting, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'numLoop
@@ -79,11 +79,11 @@ Partial Class windowMain
 		'grdResult
 		'
 		Me.grdResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.grdResult.Location = New System.Drawing.Point(3, 164)
+		Me.grdResult.Location = New System.Drawing.Point(3, 167)
 		Me.grdResult.Margin = New System.Windows.Forms.Padding(0, 3, 3, 3)
 		Me.grdResult.Name = "grdResult"
 		Me.grdResult.RowTemplate.Height = 21
-		Me.grdResult.Size = New System.Drawing.Size(185, 186)
+		Me.grdResult.Size = New System.Drawing.Size(375, 183)
 		Me.grdResult.TabIndex = 4
 		'
 		'numTesting
@@ -105,58 +105,72 @@ Partial Class windowMain
 		'
 		'btnTesting
 		'
-		Me.btnTesting.Location = New System.Drawing.Point(12, 112)
+		Me.btnTesting.Location = New System.Drawing.Point(228, 112)
 		Me.btnTesting.Name = "btnTesting"
-		Me.btnTesting.Size = New System.Drawing.Size(358, 28)
+		Me.btnTesting.Size = New System.Drawing.Size(150, 28)
 		Me.btnTesting.TabIndex = 7
 		Me.btnTesting.Text = "試行開始(&T)"
 		Me.btnTesting.UseVisualStyleBackColor = True
 		'
 		'btnSave
 		'
-		Me.btnSave.Location = New System.Drawing.Point(12, 356)
+		Me.btnSave.Location = New System.Drawing.Point(253, 356)
 		Me.btnSave.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
 		Me.btnSave.Name = "btnSave"
-		Me.btnSave.Size = New System.Drawing.Size(357, 27)
+		Me.btnSave.Size = New System.Drawing.Size(116, 27)
 		Me.btnSave.TabIndex = 8
 		Me.btnSave.Text = "結果を保存(&S)"
 		Me.btnSave.UseVisualStyleBackColor = True
-		'
-		'DataGridView1
-		'
-		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Location = New System.Drawing.Point(194, 164)
-		Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 3, 0, 3)
-		Me.DataGridView1.Name = "DataGridView1"
-		Me.DataGridView1.RowTemplate.Height = 21
-		Me.DataGridView1.Size = New System.Drawing.Size(185, 186)
-		Me.DataGridView1.TabIndex = 9
 		'
 		'lblCompareA
 		'
 		Me.lblCompareA.AutoSize = True
 		Me.lblCompareA.Location = New System.Drawing.Point(9, 143)
+		Me.lblCompareA.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
 		Me.lblCompareA.Name = "lblCompareA"
-		Me.lblCompareA.Size = New System.Drawing.Size(40, 18)
+		Me.lblCompareA.Size = New System.Drawing.Size(56, 18)
 		Me.lblCompareA.TabIndex = 10
-		Me.lblCompareA.Text = "比較A"
+		Me.lblCompareA.Text = "比較結果"
 		'
-		'lblCompareB
+		'chkTestAlsoClear
 		'
-		Me.lblCompareB.AutoSize = True
-		Me.lblCompareB.Location = New System.Drawing.Point(197, 143)
-		Me.lblCompareB.Name = "lblCompareB"
-		Me.lblCompareB.Size = New System.Drawing.Size(40, 18)
-		Me.lblCompareB.TabIndex = 11
-		Me.lblCompareB.Text = "比較B"
+		Me.chkTestAlsoClear.AutoSize = True
+		Me.chkTestAlsoClear.Checked = True
+		Me.chkTestAlsoClear.CheckState = System.Windows.Forms.CheckState.Checked
+		Me.chkTestAlsoClear.Location = New System.Drawing.Point(6, 116)
+		Me.chkTestAlsoClear.Name = "chkTestAlsoClear"
+		Me.chkTestAlsoClear.Size = New System.Drawing.Size(111, 22)
+		Me.chkTestAlsoClear.TabIndex = 11
+		Me.chkTestAlsoClear.Text = "グリッドに追加"
+		Me.chkTestAlsoClear.UseVisualStyleBackColor = True
+		'
+		'btnClear
+		'
+		Me.btnClear.Location = New System.Drawing.Point(3, 358)
+		Me.btnClear.Name = "btnClear"
+		Me.btnClear.Size = New System.Drawing.Size(89, 23)
+		Me.btnClear.TabIndex = 12
+		Me.btnClear.Text = "クリア(&C)"
+		Me.btnClear.UseVisualStyleBackColor = True
+		'
+		'chkShowDetailWindw
+		'
+		Me.chkShowDetailWindw.AutoSize = True
+		Me.chkShowDetailWindw.Location = New System.Drawing.Point(123, 116)
+		Me.chkShowDetailWindw.Name = "chkShowDetailWindw"
+		Me.chkShowDetailWindw.Size = New System.Drawing.Size(99, 22)
+		Me.chkShowDetailWindw.TabIndex = 13
+		Me.chkShowDetailWindw.Text = "詳細画面表示"
+		Me.chkShowDetailWindw.UseVisualStyleBackColor = True
 		'
 		'windowMain
 		'
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
 		Me.ClientSize = New System.Drawing.Size(382, 390)
-		Me.Controls.Add(Me.lblCompareB)
+		Me.Controls.Add(Me.chkShowDetailWindw)
+		Me.Controls.Add(Me.btnClear)
+		Me.Controls.Add(Me.chkTestAlsoClear)
 		Me.Controls.Add(Me.lblCompareA)
-		Me.Controls.Add(Me.DataGridView1)
 		Me.Controls.Add(Me.btnSave)
 		Me.Controls.Add(Me.btnTesting)
 		Me.Controls.Add(Me.lblTesting)
@@ -169,11 +183,9 @@ Partial Class windowMain
 		Me.Font = New System.Drawing.Font("メイリオ", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
 		Me.Name = "windowMain"
-		Me.Text = "速度比較"
 		CType(Me.numLoop, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.grdResult, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.numTesting, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -187,8 +199,9 @@ Partial Class windowMain
 	Friend WithEvents lblTesting As System.Windows.Forms.Label
 	Friend WithEvents btnTesting As System.Windows.Forms.Button
 	Friend WithEvents btnSave As System.Windows.Forms.Button
-	Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
 	Friend WithEvents lblCompareA As System.Windows.Forms.Label
-	Friend WithEvents lblCompareB As System.Windows.Forms.Label
+	Friend WithEvents chkTestAlsoClear As System.Windows.Forms.CheckBox
+	Friend WithEvents btnClear As System.Windows.Forms.Button
+	Friend WithEvents chkShowDetailWindw As System.Windows.Forms.CheckBox
 
 End Class

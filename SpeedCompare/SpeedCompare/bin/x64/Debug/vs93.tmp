@@ -63,19 +63,6 @@ SpeedCompare
  </summary>
 	<param name="StopFlag"></param>
 	<remarks></remarks>
-</member><member name="M:SpeedCompare.modMain.SaveCsvFromGrid(System.Windows.Forms.DataGridView)">
-	<summary>
- 渡されたグリッドの内容をCSVで保存
- </summary>
-	<param name="grdTarget"></param>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.modMain.GetGridString(System.Windows.Forms.DataGridView)">
-	<summary>
- グリッドの中身の文字列を取得
- </summary>
-	<param name="gridTarget"></param>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="M:SpeedCompare.modMain.GetCompareTypeList">
 	<summary>
  比較種類のリストを取得
@@ -102,13 +89,6 @@ SpeedCompare
 	<param name="settingInfo"></param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:SpeedCompare.modMain.StringBuilderVsStringBuilderCapacity(SpeedCompare.clsSetting)">
-	<summary>
- StringBuilderと容量指定のStringBuilderを比較
- </summary>
-	<param name="settingInfo"></param>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="T:SpeedCompare.modMain">
 	<summary>
  本アプリのメインモジュール
@@ -124,13 +104,6 @@ SpeedCompare
 </member><member name="P:SpeedCompare.clsResult.ResultListB">
 	<summary>
  測定結果Bのリスト
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:SpeedCompare.clsResult.CompareName">
-	<summary>
- 比較名称
  </summary>
 	<value></value>
 	<returns></returns>
@@ -270,16 +243,6 @@ SpeedCompare
 </member><member name="M:SpeedCompare.windowMain.InitCotrols">
 	<summary>
  コントロールを初期化
- </summary>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.windowMain.InitComboBox">
-	<summary>
- コンボボックスを初期化
- </summary>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.windowMain.InitGrid">
-	<summary>
- グリッドを初期化
  </summary>
 	<remarks></remarks>
 </member><member name="M:SpeedCompare.windowMain.MakeSettingInfo">

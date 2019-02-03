@@ -83,6 +83,22 @@ Public Class clsResult
 		End Set
 	End Property
 
+	Private _compareName As String
+	''' <summary>
+	''' 比較名称
+	''' </summary>
+	''' <value></value>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Public Property CompareName() As String
+		Get
+			Return _compareName
+		End Get
+		Set(ByVal value As String)
+			_compareName = value
+		End Set
+	End Property
+
 	''' <summary>
 	''' 測定結果数
 	''' </summary>

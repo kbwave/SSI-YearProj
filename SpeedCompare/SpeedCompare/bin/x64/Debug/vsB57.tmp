@@ -102,13 +102,6 @@ SpeedCompare
 	<param name="settingInfo"></param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:SpeedCompare.modMain.StringBuilderVsStringBuilderCapacity(SpeedCompare.clsSetting)">
-	<summary>
- StringBuilderと容量指定のStringBuilderを比較
- </summary>
-	<param name="settingInfo"></param>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="T:SpeedCompare.modMain">
 	<summary>
  本アプリのメインモジュール

@@ -1,5 +1,6 @@
 ﻿Imports System.Diagnostics
 Imports System.Text
+Imports System.IO
 
 ''' <summary>
 ''' 本アプリのメインモジュール
@@ -144,6 +145,62 @@ Module modMain
 	End Function
 
 	''' <summary>
+	''' 渡されたグリッドの内容をCSVで保存
+	''' </summary>
+	''' <param name="grdTarget"></param>
+	''' <remarks></remarks>
+	Public Sub SaveCsvFromGrid(ByVal grdTarget As DataGridView)
+		Dim willSave As Boolean = False
+		Dim savePath As String = String.Empty
+		Dim saveString As String = String.Empty
+
+		Using saveFileWindow As New SaveFileDialog
+			saveFileWindow.Title = "保存するCSVファイルを選択"
+			saveFileWindow.Filter = "カンマ区切りファイル|*.csv"
+			saveFileWindow.FilterIndex = 0
+
+			Select Case saveFileWindow.ShowDialog()
+				Case DialogResult.OK
+					willSave = True
+					savePath = saveFileWindow.FileName
+			End Select
+		End Using
+
+		If willSave Then
+			Using writer As New StreamWriter(savePath, False, System.Text.Encoding.GetEncoding("shift_jis"))
+				writer.Write(GetGridString(grdTarget))
+			End Using
+		End If
+	End Sub
+
+	''' <summary>
+	''' グリッドの中身の文字列を取得
+	''' </summary>
+	''' <param name="gridTarget"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function GetGridString(ByVal gridTarget As DataGridView) As String
+		Dim gridString As StringBuilder = Nothing
+		gridString = New StringBuilder
+
+		' タイトル情報
+		For col As Integer = 0 To gridTarget.Columns.Count - 1
+			gridString.Append(gridTarget.Columns(col).HeaderText & ",")
+		Next
+		gridString.AppendLine(String.Empty)
+
+		' データ情報
+		For row As Integer = 0 To gridTarget.Rows.Count - 1
+			For col As Integer = 0 To gridTarget.Columns.Count - 1
+				gridString.Append(gridTarget.Rows(row).Cells(col).Value.ToString & ",")
+			Next
+			gridString.AppendLine(String.Empty)
+		Next
+
+		Return gridString.ToString
+	End Function
+
+	''' <summary>
 	''' 比較種類のリストを取得
 	''' </summary>
 	''' <returns></returns>
@@ -190,7 +247,16 @@ Module modMain
 			Case modDefine.CompareTypeIndex.StringVsStringBuilder
 				resultInfo = StringVsStringBuilder(settingInfo)
 
+			Case modDefine.CompareTypeIndex.StringBuilderVsStringBuilderCapacity
+				resultInfo = StringBuilderVsStringBuilderCapacity(settingInfo)
+
 		End Select
+
+		If Not resultInfo Is Nothing Then
+			resultInfo.CompareName = settingInfo.CompareName
+		Else
+			resultInfo = New clsResult
+		End If
 
 		Return resultInfo
 	End Function
@@ -237,6 +303,47 @@ Module modMain
 		Return resultInfo
 	End Function
 
+	''' <summary>
+	''' StringBuilderと容量指定のStringBuilderを比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function StringBuilderVsStringBuilderCapacity(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		Dim normalSB As StringBuilder = Nothing
+		Dim capaedSB As StringBuilder = Nothing
+
+		resultInfo = New clsResult
+
+		For testNum As Integer = 1 To settingInfo.TestNum
+			normalSB = New StringBuilder
+			capaedSB = New StringBuilder
+
+			normalSB.Capacity = 16
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+
+			For loopCnt As Long = 1& To settingInfo.LoopNum
+				normalSB.Append("a")
+			Next
+			resultInfo.AddResultA(modMain.GetWatchTimerMicroSec())
+
+			capaedSB.Capacity = CInt(settingInfo.LoopNum)
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+
+			For loopCnt As Long = 1& To settingInfo.LoopNum
+				capaedSB.Append("a")
+			Next
+			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
+
+			normalSB = Nothing
+			capaedSB = Nothing
+		Next
+
+		Return resultInfo
+	End Function
 
 #End Region
 

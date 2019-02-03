@@ -28,12 +28,18 @@ Public Class windowMain
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
 	''' <remarks></remarks>
-	Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnTesting.Click, btnSave.Click
+	Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnTesting.Click, btnSave.Click, btnClear.Click
 		If sender.Equals(Me.btnTesting) Then
+			' 試行開始ボタン
 			StartTesting()
 
 		ElseIf sender.Equals(Me.btnSave) Then
+			' CSV保存ボタン
+			modMain.SaveCsvFromGrid(Me.grdResult)
 
+		ElseIf sender.Equals(Me.btnClear) Then
+			' クリアボタン
+			InitGrid()
 
 		End If
 	End Sub
@@ -67,6 +73,19 @@ Public Class windowMain
 	''' <remarks></remarks>
 	Private Sub InitCotrols()
 		' 比較の種類コンボボックス
+		InitComboBox()
+
+		' 比較結果のグリッド
+		InitGrid()
+
+	End Sub
+
+	''' <summary>
+	''' コンボボックスを初期化
+	''' </summary>
+	''' <remarks></remarks>
+	Private Sub InitComboBox()
+		' 比較の種類コンボボックス
 		With Me.cbxCompareType
 			.Items.Clear()
 
@@ -77,7 +96,13 @@ Public Class windowMain
 			' デフォはString V.S. StringBuilderで
 			.SelectedIndex = modDefine.CompareTypeIndex.StringVsStringBuilder.GetHashCode - 1
 		End With
+	End Sub
 
+	''' <summary>
+	''' グリッドを初期化
+	''' </summary>
+	''' <remarks></remarks>
+	Private Sub InitGrid()
 		' 比較結果のグリッド
 		With Me.grdResult
 			.RowHeadersVisible = False
@@ -92,7 +117,6 @@ Public Class windowMain
 			.Columns(modDefine.grdResultCol.ResultA).HeaderText = modDefine.GRID_RESULT_TITLE_RESULTA
 			.Columns(modDefine.grdResultCol.ResultB).HeaderText = modDefine.GRID_RESULT_TITLE_RESULTB
 		End With
-
 	End Sub
 
 	''' <summary>
@@ -133,16 +157,24 @@ Public Class windowMain
 	Private Sub AppendResult(ByVal resultInfo As clsResult)
 		Dim addedRowIndex As Integer = 0
 
+		If Not Me.chkTestAlsoClear.Checked Then
+			InitGrid()
+		End If
+
 		With Me.grdResult
 			addedRowIndex = .Rows.Add()
 
 			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.TypeName).ValueType = GetType(String)
-			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.TypeName).Value = modMain.GetCompareName(Me.cbxCompareType.SelectedIndex)
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.TypeName).Value = resultInfo.CompareName
 
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.LoopNum).ValueType = GetType(String)
 			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.LoopNum).Value = Me.numLoop.Value.ToString
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.TestNum).ValueType = GetType(String)
 			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.TestNum).Value = Me.numTesting.Value.ToString
 
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.ResultA).ValueType = GetType(String)
 			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.ResultA).Value = resultInfo.GetAverageA
+			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.ResultB).ValueType = GetType(String)
 			.Rows(addedRowIndex).Cells(modDefine.grdResultCol.ResultB).Value = resultInfo.GetAverageB
 		End With
 	End Sub
