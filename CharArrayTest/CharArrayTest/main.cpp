@@ -22,22 +22,23 @@ int main(int argc, char* argv[])
 
 	strcpy_s(org, 128, "This String is Original.");	
 #if _DEBUG
+	//ƒkƒ‹•¶š‚ğ“ü‚ê‚Ş‚Æstrcpy‚ÅƒGƒ‰[‚ªo‚é
 	for (int i = strlen(org) + 1; i < 128; i++){
 		org[i] = '\0';
 	}
 	for (int i = 0; i < 128; i++){
 		printf("%d ", org[i]);
-}
-#endif
-
-	
+	}
 	printf("\n");
+#endif
 	printf("%s\n", org);
 
 	strcpy_s(insert, 128, "Insert String.");
+	printf("%s\n", insert);
 
-
-	
+	strcat_s(dest, 256, org);
+	strcpy_s(dest, 256, insert);
+	//strcat_s(dest, 256, insert);
 	printf("%s\n", dest);
 
 	//Free Process
