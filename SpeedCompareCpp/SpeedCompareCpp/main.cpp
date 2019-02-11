@@ -1,54 +1,52 @@
 #include <stdio.h>
 #include <string.h>
+//#include <time.h>
+#include <Windows.h>
 #include "kbwaveStringBuilder.h"
 
-void BehaveString(void);
-void BehaveStringBuilder(void);
+#define LOOP_CNT 8100
+#define CAPA_SIZ 8500
+#define TEST_CNT 10
+
+#pragma comment(lib, "winmm.lib")
+
 
 int main(int argc, char *argv[])
 {
-	/*
-	char* test = "test";
-	char test2[8] = {'t', 'e', 's', 't', '!', '\0'};
-	char test2[6] = { 't', 'e', 's', 't', '!'};
-	printf("%s：%d\n", test, int(strlen(test)));
-	printf("%s：%d\n", test2, int(strlen(test2)));
-	*/
-	/*
-	char test1[8] = {'t', 'e', 's', 't', '\0', '!', '\0'};
-	printf("%s\n", test1);
-	for (int i  = 0; i  < sizeof(test1) - 1; i ++){
-		printf("%c", test1[i]);
-	}
-	printf("\n");
-	*/
-	/*
-	char test3[1];
-	printf("FirstState:%d\n", test3[0]);
-	strcpy_s(test3, 1, "\0");
-	printf("SetCharactor:%d\n", test3[0]);
-	*/
+	kbwaveStringBuilder normalSB;
+	DWORD s_time, e_time;
+	//clock_t s_time, e_time;
 
-	kbwaveStringBuilder kSB;
-	char numString[4];
-	//&kSB = new kbwaveStringBuilder;
+	for (int test = 0; test < TEST_CNT; test++){
+		s_time = timeGetTime();
+		//s_time = clock();
+		for (int i = 0; i < LOOP_CNT; i++){
+			normalSB.Append("a");
+		}
+		e_time = timeGetTime();
+		//e_time = clock();
+		//printf("%s\n", normalSB.ToString());
+		//normalSB.~kbwaveStringBuilder();
+		printf("Normal StringBuilder time is ->%d\n\n", e_time - s_time);
+		//printf("Normal StringBuilder time is ->%d\n\n", e_time - s_time);
 
-	for (int i = 0; i < 100; i++){
-		sprintf_s(numString, "%03d", i);
-		kSB.Append(numString);
-	}
 
+		kbwaveStringBuilder capadSB;
+		capadSB.Capacity(9000);
+		s_time = timeGetTime();
+		//s_time = clock();
+		for (int i = 0; i < LOOP_CNT; i++){
+			capadSB.Append("a");
+		}
+		e_time = timeGetTime();
+		//e_time = clock();
+		//printf("%s\n", capadSB.ToString());
+		//capadSB.~kbwaveStringBuilder();
+		printf("Set Capacity StringBuilder time is ->%d\n\n", e_time - s_time);
+		//printf("Set Capacity StringBuilder time is ->%d\n\n", e_time - s_time);
+	}	
+
+	printf("測定終了。\n");
+	getchar();
 	return 0;
-}
-
-//Stringのような振る舞いをさせる
-void BehaveString(void)
-{
-
-}
-
-//StringBuilderのような振る舞いをさせる
-void BehaveStringBuilder(void)
-{
-
 }

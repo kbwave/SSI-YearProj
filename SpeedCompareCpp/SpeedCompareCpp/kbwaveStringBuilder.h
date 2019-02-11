@@ -9,9 +9,12 @@ private:
 	char* _string;
 	int _length = 0;
 	int _capacity = 0;
+	int _capacityBit = 0;
 
+	void Initialize(void);
 	void UpdateStringMemory(void);
 	void UpdateString(char *);
+	void AppendString(char *);
 
 public:
 	//Constructor
