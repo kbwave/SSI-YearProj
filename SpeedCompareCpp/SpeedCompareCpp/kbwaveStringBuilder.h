@@ -27,9 +27,11 @@ public:
 
 	//Append String Value
 	void Append(char* string);
+	//Clear String
+	void Clear(void);
 	//Set Memory
 	void Capacity(int bytes);
-	int Capacity();
+	int Capacity(void);
 
 	char* ToString();
 };

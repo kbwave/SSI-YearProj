@@ -5,7 +5,7 @@
 #include <string.h>
 #include <math.h>
 
-#define DEF_CAPACITY 65535
+#define DEF_CAPACITY 16
 
 //using namespace std;
 
@@ -72,7 +72,7 @@ void kbwaveStringBuilder::Initialize(void)
 void kbwaveStringBuilder::AppendString(char* addString)
 {
 	strcat_s(_string, _capacity, addString);
-	_length = int(strlen(_string));
+	//_length = int(strlen(_string));
 }
 
 //Å™Å™*********************Private*********************Å™Å™
@@ -109,12 +109,22 @@ kbwaveStringBuilder::~kbwaveStringBuilder()
 	}	
 }
 
+//Clear
+void kbwaveStringBuilder::Clear(void)
+{
+	char* newString = NULL;
+	AllocateMemory(&newString, DEF_CAPACITY);
+	_capacity = DEF_CAPACITY;
+	_length = 0;
+	free(_string);
+	_string = newString;
+}
+
 //Append String
 void kbwaveStringBuilder::Append(char* argString)
 {
 	int length = 0;
-	length = int(strlen(argString));
-	//_length += length;
+	length = int(strlen(argString));	
 
 	int needCapacity = 0;
 	needCapacity = GetNextCapacity(_capacityBit, _length + length);
@@ -122,8 +132,9 @@ void kbwaveStringBuilder::Append(char* argString)
 		_capacity = needCapacity;
 		UpdateStringMemory();
 	}
-		
+	
 	AppendString(argString);
+	_length += length;
 }
 
 //Set Capacity
@@ -136,7 +147,7 @@ void kbwaveStringBuilder::Capacity(int argCapacity)
 }
 
 //Get Capacity Size
-int kbwaveStringBuilder::Capacity()
+int kbwaveStringBuilder::Capacity(void)
 {
 	return _capacity;
 }
