@@ -9,3 +9,4 @@ C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\SpeedCompare\SpeedComp
 C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Release\SpeedCompare.exe
 C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Release\SpeedCompare.xml
 C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Release\SpeedCompare.pdb
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Release\SpeedCompare.vbprojResolveAssemblyReference.cache

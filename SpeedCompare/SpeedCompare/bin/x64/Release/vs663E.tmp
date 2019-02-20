@@ -1,0 +1,339 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SpeedCompare
+</name>
+</assembly>
+<members>
+<member name="F:SpeedCompare.modMain._windowMain">
+	<summary>
+ メインウィンドウ
+ </summary>
+	<remarks></remarks>
+</member><member name="F:SpeedCompare.modMain._stopWatch">
+	<summary>
+ ストップウォッチ
+ </summary>
+	<remarks></remarks>
+</member><member name="F:SpeedCompare.modMain._compareDic">
+	<summary>
+ 比較辞書
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.Main">
+	<summary>
+ エントリーポイント
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.Preparation">
+	<summary>
+ 準備
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.MakeCompareDic">
+	<summary>
+ 比較の辞書を作成
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.Terminate">
+	<summary>
+ 後処理
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.ResetStopWatch">
+	<summary>
+ ストップウォッチをリセット
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.StartStopWatch">
+	<summary>
+ ストップウォッチを開始
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.GetWatchTimerMicroSec">
+	<summary>
+ ウォッチタイマーの時間を取得
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.GetWatchTimer(System.Boolean)">
+	<summary>
+ ウォッチタイマーの時間を取得
+ </summary>
+	<param name="StopFlag"></param>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.SaveCsvFromGrid(System.Windows.Forms.DataGridView)">
+	<summary>
+ 渡されたグリッドの内容をCSVで保存
+ </summary>
+	<param name="grdTarget"></param>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.GetGridString(System.Windows.Forms.DataGridView)">
+	<summary>
+ グリッドの中身の文字列を取得
+ </summary>
+	<param name="gridTarget"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.GetCompareTypeList">
+	<summary>
+ 比較種類のリストを取得
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.GetCompareName(System.Int32)">
+	<summary>
+	</summary>
+	<param name="dicKey"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.StartTesting(SpeedCompare.clsSetting)">
+	<summary>
+ 試行開始
+ </summary>
+	<param name="settingInfo"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.StringVsStringBuilder(SpeedCompare.clsSetting)">
+	<summary>
+ StringとStringBuilderを比較
+ </summary>
+	<param name="settingInfo"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.modMain.StringBuilderVsStringBuilderCapacity(SpeedCompare.clsSetting)">
+	<summary>
+ StringBuilderと容量指定のStringBuilderを比較
+ </summary>
+	<param name="settingInfo"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.modMain">
+	<summary>
+ 本アプリのメインモジュール
+ </summary>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsResult.ResultListA">
+	<summary>
+ 測定結果Aのリスト
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsResult.ResultListB">
+	<summary>
+ 測定結果Bのリスト
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsResult.CompareName">
+	<summary>
+ 比較名称
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsResult.ResultNum">
+	<summary>
+ 測定結果数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsResult.AverageA">
+	<summary>
+ 結果Aの平均を取得
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsResult.AverageB">
+	<summary>
+ 結果Bの平均を取得
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.ClearResult">
+	<summary>
+ 結果をクリア
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.AddResultA(System.Int64)">
+	<summary>
+ A部分の結果を追加
+ </summary>
+	<param name="result"></param>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.AddResultB(System.Int64)">
+	<summary>
+ B部分の結果を追加
+ </summary>
+	<param name="result"></param>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.DataNumA">
+	<summary>
+ Aに入れ込んだデータ数
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.DataNumB">
+	<summary>
+ Bに入れ込んだデータ数
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.GetUpdatedAverage(System.Double,System.Int64,System.Int64)">
+	<summary>
+ 値を追加した際の平均値を取得
+ </summary>
+	<param name="average">更新対象の平均値</param>
+	<param name="result">追加を行う結果</param>
+	<returns>更新後の平均値</returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.GetAverageA">
+	<summary>
+ A部分結果の平均値の文字列を取得
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.clsResult.GetAverageB">
+	<summary>
+ B部分結果の平均値の文字列を取得
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.clsResult">
+	<summary>
+ 結果を管理
+ </summary>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsSetting.LoopNum">
+	<summary>
+ 繰り返し回数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsSetting.TestNum">
+	<summary>
+ 試行回数
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsSetting.CompareType">
+	<summary>
+ 比較を行う種類
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.clsSetting.CompareName">
+	<summary>
+ 比較を行う種類の名称
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.clsSetting">
+	<summary>
+ 設定関係を管理
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.#ctor">
+	<summary>
+ インスタンス
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.btn_Click(System.Object,System.EventArgs)">
+	<summary>
+ ボタンクリック
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.cbxCompareType_SelectedIndexChanged(System.Object,System.EventArgs)">
+	<summary>
+ 比較種類コンボ選択Index変更時
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.Preparation">
+	<summary>
+ 準備
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.InitCotrols">
+	<summary>
+ コントロールを初期化
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.InitComboBox">
+	<summary>
+ コンボボックスを初期化
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.InitGrid">
+	<summary>
+ グリッドを初期化
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.MakeSettingInfo">
+	<summary>
+ 設定情報を作成
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.StartTesting">
+	<summary>
+ 試行開始してグリッドに結果を表示
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SpeedCompare.windowMain.AppendResult(SpeedCompare.clsResult)">
+	<summary>
+ 結果をグリッドへ追加
+ </summary>
+	<param name="resultInfo"></param>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.windowMain">
+	<summary>
+ 速度比較画面
+ </summary>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.modDefine.CompareTypeIndex">
+	<summary>
+ 比較の種類
+ </summary>
+	<remarks>
+ 1月：String V.S. StringBuilder
+ </remarks>
+</member><member name="T:SpeedCompare.modDefine.grdResultCol">
+	<summary>
+ 比較結果グリッドの列Index
+ </summary>
+	<remarks></remarks>
+</member><member name="T:SpeedCompare.modDefine">
+	<summary>
+ 定義モジュール
+ </summary>
+	<remarks></remarks>
+</member><member name="P:SpeedCompare.My.Resources.Resources.ResourceManager">
+	<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member><member name="P:SpeedCompare.My.Resources.Resources.Culture">
+	<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member><member name="T:SpeedCompare.My.Resources.Resources">
+	<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+</members>
+</doc>
