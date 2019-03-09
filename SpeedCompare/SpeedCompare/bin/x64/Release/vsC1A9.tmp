@@ -116,13 +116,6 @@ SpeedCompare
 	<param name="settingInfo"></param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:SpeedCompare.modMain.StrCompVsStringEquals(SpeedCompare.clsSetting)">
-	<summary>
- 空文字比較と文字列長の速度比較
- </summary>
-	<param name="settingInfo"></param>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="T:SpeedCompare.modMain">
 	<summary>
  本アプリのメインモジュール

@@ -78,6 +78,9 @@ Module modMain
 
 			.Add(modDefine.CompareTypeIndex.StringVsStringBuilder.GetHashCode, modDefine.COMPNAME_STRING_STRINGBUILDER)
 			.Add(modDefine.CompareTypeIndex.StringBuilderVsStringBuilderCapacity.GetHashCode, modDefine.COMPNAME_STRINGBUILDER_CAPACITY)
+			.Add(modDefine.CompareTypeIndex.StringEmptyVsLength.GetHashCode, modDefine.COMPNAME_STREMPTY_LENGTH)
+			.Add(modDefine.CompareTypeIndex.StrCompVsStringEqualsVerEmpty.GetHashCode, modDefine.COMPNAME_STRINGCOMP_STRINGEQUAL_EMPTY)
+			.Add(modDefine.CompareTypeIndex.StrCompVsStringEquals.GetHashCode, modDefine.COMPNAME_STRINGCOMP_STRINGEQUAL)
 		End With
 	End Sub
 
@@ -250,6 +253,15 @@ Module modMain
 			Case modDefine.CompareTypeIndex.StringBuilderVsStringBuilderCapacity
 				resultInfo = StringBuilderVsStringBuilderCapacity(settingInfo)
 
+			Case modDefine.CompareTypeIndex.StringEmptyVsLength
+				resultInfo = StringEmptyVsLength(settingInfo)
+
+			Case modDefine.CompareTypeIndex.StrCompVsStringEqualsVerEmpty
+				resultInfo = StrCompVsStringEqualsVerEmpty(settingInfo)
+
+			Case modDefine.CompareTypeIndex.StrCompVsStringEquals
+				resultInfo = StrCompVsStringEquals(settingInfo)
+
 		End Select
 
 		If Not resultInfo Is Nothing Then
@@ -344,6 +356,124 @@ Module modMain
 
 		Return resultInfo
 	End Function
+
+	''' <summary>
+	''' 空文字比較と文字列長の速度比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function StringEmptyVsLength(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		Dim EmptyString As String = String.Empty
+
+		resultInfo = New clsResult
+
+		For testNum As Integer = 1 To settingInfo.TestNum
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+
+			Next
+#If DEBUG Then
+			MessageBox.Show("単純ループ所要時間：" & modMain.GetWatchTimerMicroSec().ToString)
+#End If
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If EmptyString = String.Empty Then
+
+				End If
+			Next
+			resultInfo.AddResultA(modMain.GetWatchTimerMicroSec())
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If EmptyString.Length = 0 Then
+
+				End If
+			Next
+			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
+		Next
+
+		Return resultInfo
+	End Function
+
+	''' <summary>
+	''' 文字比較と文字列一致の速度比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function StrCompVsStringEqualsVerEmpty(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		Dim EmptyString As String = String.Empty
+
+		resultInfo = New clsResult
+
+		For testNum As Integer = 1 To settingInfo.TestNum
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If StrComp(EmptyString, String.Empty) = 0 Then
+
+				End If
+			Next
+			resultInfo.AddResultA(modMain.GetWatchTimerMicroSec())
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If EmptyString.Equals(String.Empty) Then
+
+				End If
+			Next
+			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
+		Next
+
+		Return resultInfo
+	End Function
+
+	''' <summary>
+	''' 文字比較と文字列一致の速度比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function StrCompVsStringEquals(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		Dim EmptyString As String = "abcd"
+
+		resultInfo = New clsResult
+
+		For testNum As Integer = 1 To settingInfo.TestNum
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If StrComp(EmptyString, "abcd") = 0 Then
+
+				End If
+			Next
+			resultInfo.AddResultA(modMain.GetWatchTimerMicroSec())
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If EmptyString.Equals("abcd") Then
+
+				End If
+			Next
+			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
+		Next
+
+		Return resultInfo
+	End Function
+
 
 #End Region
 

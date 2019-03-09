@@ -10,7 +10,3 @@ c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedComp
 c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Debug\SpeedCompare.pdb
 c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedCompare\bin\x64\Debug\kbwaveRegistryLogic.dll
 c:\users\林 知宏\documents\visual studio 2013\Projects\SpeedCompare\SpeedCompare\obj\x64\Debug\SpeedCompare.vbprojResolveAssemblyReference.cache
-C:\Users\林 知宏\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\bin\x64\Debug\SpeedCompare.exe.config
-C:\Users\林 知宏\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\obj\x64\Debug\SpeedCompare.exe
-C:\Users\林 知宏\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\obj\x64\Debug\SpeedCompare.xml
-C:\Users\林 知宏\Documents\GitHub\SSI-YearProj\SpeedCompare\SpeedCompare\obj\x64\Debug\SpeedCompare.pdb

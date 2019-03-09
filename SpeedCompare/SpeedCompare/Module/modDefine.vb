@@ -12,11 +12,17 @@ Module modDefine
 
 #Region "Const"
 
-	' 比較の種類に関して
+	' 比較の種類に関して(追加時はmodMainのMakeCompareDicにも追加必須)
 	Public Const COMPTYPE_STRING_STRINGBUILDER As String = "String V.S. StringBuilder"
 	Public Const COMPNAME_STRING_STRINGBUILDER As String = "文字列VS文字列組み立て(Normal)"
 	Public Const COMPTYPE_STRINGBUILDER_CAPACITY As String = "StringBuilder Capacity"
 	Public Const COMPNAME_STRINGBUILDER_CAPACITY As String = "文字列組み立て(容量指定)"
+	Public Const COMPTYPE_STREMPTY_LENGTH As String = "StrEmpty V.S. Length"
+	Public Const COMPNAME_STREMPTY_LENGTH As String = "空文字比較(StrEmpty vs Length)"
+	Public Const COMPTYPE_STRINGCOMP_STRINGEQUAL_EQUAL As String = "StrComp vs StringEquals"
+	Public Const COMPNAME_STRINGCOMP_STRINGEQUAL_EMPTY As String = "文字列比較(StrComp vs StringEquals)"
+	Public Const COMPTYPE_STRINGCOMP_STRINGEQUAL As String = "StrComp vs StringEquals"
+	Public Const COMPNAME_STRINGCOMP_STRINGEQUAL As String = "文字列比較(StrComp vs StringEquals)"
 
 	Public Const NO_DATA_TEXT As String = "0：結果なし"
 
@@ -41,6 +47,9 @@ Module modDefine
 		None = 0
 		StringVsStringBuilder
 		StringBuilderVsStringBuilderCapacity
+		StringEmptyVsLength
+		StrCompVsStringEqualsVerEmpty
+		StrCompVsStringEquals
 
 		Num
 	End Enum
