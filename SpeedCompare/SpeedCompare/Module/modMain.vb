@@ -81,6 +81,11 @@ Module modMain
 			.Add(modDefine.CompareTypeIndex.StringEmptyVsLength.GetHashCode, modDefine.COMPNAME_STREMPTY_LENGTH)
 			.Add(modDefine.CompareTypeIndex.StrCompVsStringEqualsVerEmpty.GetHashCode, modDefine.COMPNAME_STRINGCOMP_STRINGEQUAL_EMPTY)
 			.Add(modDefine.CompareTypeIndex.StrCompVsStringEquals.GetHashCode, modDefine.COMPNAME_STRINGCOMP_STRINGEQUAL)
+			.Add(modDefine.CompareTypeIndex.MidVsLeft.GetHashCode, modDefine.COMPNAME_MID_LEFT)
+			.Add(modDefine.CompareTypeIndex.MidVsRight.GetHashCode, modDefine.COMPNAME_MID_RIGHT)
+			.Add(modDefine.CompareTypeIndex.RightVsPadRight, modDefine.COMPNAME_RIGHT_PADEDRIGHT)
+			.Add(modDefine.CompareTypeIndex.PadRightVsFormat, modDefine.COMPNAME_PADEDRIGHT_FORMAT)
+
 		End With
 	End Sub
 
@@ -261,6 +266,18 @@ Module modMain
 
 			Case modDefine.CompareTypeIndex.StrCompVsStringEquals
 				resultInfo = StrCompVsStringEquals(settingInfo)
+
+			Case modDefine.CompareTypeIndex.MidVsLeft
+				resultInfo = MidVsLeft(settingInfo)
+
+			Case modDefine.CompareTypeIndex.MidVsRight
+				resultInfo = MidVsRight(settingInfo)
+
+			Case modDefine.CompareTypeIndex.RightVsPadRight
+				resultInfo = RightVsPadRight(settingInfo)
+
+			Case modDefine.CompareTypeIndex.PadRightVsFormat
+				resultInfo = PadRightVsFormat(settingInfo)
 
 		End Select
 
@@ -474,7 +491,151 @@ Module modMain
 		Return resultInfo
 	End Function
 
+	''' <summary>
+	''' MidとLeftの速度比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function MidVsLeft(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		Dim TrimingString As String = "1234"
 
+		resultInfo = New clsResult
+
+		For testNum As Integer = 1 To settingInfo.TestNum
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If Mid(TrimingString, 1, 2).Equals("12") Then
+
+				End If
+			Next
+			resultInfo.AddResultA(modMain.GetWatchTimerMicroSec())
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If Left(TrimingString, 2).Equals("12") Then
+
+				End If
+			Next
+			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
+		Next
+
+		Return resultInfo
+	End Function
+
+	''' <summary>
+	''' MidとRightの速度比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function MidVsRight(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		Dim TrimingString As String = "1234"
+
+		resultInfo = New clsResult
+
+		For testNum As Integer = 1 To settingInfo.TestNum
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If Mid(TrimingString, 3, 2).Equals("34") Then
+
+				End If
+			Next
+			resultInfo.AddResultA(modMain.GetWatchTimerMicroSec())
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If Right(TrimingString, 2).Equals("34") Then
+
+				End If
+			Next
+			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
+		Next
+
+		Return resultInfo
+	End Function
+
+	''' <summary>
+	''' RightとPadRightの速度比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function RightVsPadRight(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		Dim RightString As String = "1"
+		Dim RightFullString As String = "0001"
+
+		resultInfo = New clsResult
+
+		For testNum As Integer = 1 To settingInfo.TestNum
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If Right(RightString.PadLeft(4, "0"c), 4).Equals("0001") Then
+
+				End If
+			Next
+			resultInfo.AddResultA(modMain.GetWatchTimerMicroSec())
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If Right(RightFullString, 4).Equals("0001") Then
+
+				End If
+			Next
+			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
+		Next
+
+		Return resultInfo
+	End Function
+
+	''' <summary>
+	''' RightとPadRightの速度比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function PadRightVsFormat(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		Dim RightString As String = "1"
+		Dim RightFullString As String = "0001"
+
+		resultInfo = New clsResult
+
+		For testNum As Integer = 1 To settingInfo.TestNum
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If Right(RightString.PadLeft(4, "0"c), 4).Equals("0001") Then
+
+				End If
+			Next
+			resultInfo.AddResultA(modMain.GetWatchTimerMicroSec())
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If Right(Format(RightString, "0000"), 4).Equals("0001") Then
+
+				End If
+			Next
+			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
+		Next
+
+		Return resultInfo
+	End Function
 #End Region
 
 End Module

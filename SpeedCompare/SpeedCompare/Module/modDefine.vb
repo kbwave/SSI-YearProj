@@ -23,6 +23,14 @@ Module modDefine
 	Public Const COMPNAME_STRINGCOMP_STRINGEQUAL_EMPTY As String = "文字列比較(StrComp vs StringEquals)"
 	Public Const COMPTYPE_STRINGCOMP_STRINGEQUAL As String = "StrComp vs StringEquals"
 	Public Const COMPNAME_STRINGCOMP_STRINGEQUAL As String = "文字列比較(StrComp vs StringEquals)"
+	Public Const COMPTYPE_MID_LEFT As String = "Mid V.S. Left"
+	Public Const COMPNAME_MID_LEFT As String = "Mid V.S. Left"
+	Public Const COMPTYPE_MID_RIGHT As String = "Mid V.S. Right"
+	Public Const COMPNAME_MID_RIGHT As String = "Mid V.S. Right"
+	Public Const COMPTYPE_RIGHT_PADEDRIGHT As String = "Right V.S. PadRight"
+	Public Const COMPNAME_RIGHT_PADEDRIGHT As String = "Right V.S. PadRight"
+	Public Const COMPTYPE_PADEDRIGHT_FORMAT As String = "PadRight V.S. Format"
+	Public Const COMPNAME_PADEDRIGHT_FORMAT As String = "PadRight V.S. Format"
 
 	Public Const NO_DATA_TEXT As String = "0：結果なし"
 
@@ -50,6 +58,10 @@ Module modDefine
 		StringEmptyVsLength
 		StrCompVsStringEqualsVerEmpty
 		StrCompVsStringEquals
+		MidVsLeft
+		MidVsRight
+		RightVsPadRight
+		PadRightVsFormat
 
 		Num
 	End Enum

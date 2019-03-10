@@ -144,20 +144,6 @@ SpeedCompare
 	<param name="settingInfo"></param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:SpeedCompare.modMain.RightVsPadRight(SpeedCompare.clsSetting)">
-	<summary>
- RightとPadRightの速度比較
- </summary>
-	<param name="settingInfo"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:SpeedCompare.modMain.PadRightVsFormat(SpeedCompare.clsSetting)">
-	<summary>
- RightとPadRightの速度比較
- </summary>
-	<param name="settingInfo"></param>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="T:SpeedCompare.modMain">
 	<summary>
  本アプリのメインモジュール
