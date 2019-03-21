@@ -19,6 +19,8 @@ Module modDefine
 	Public Const COMPNAME_STRINGBUILDER_CAPACITY As String = "文字列組み立て(容量指定)"
 	Public Const COMPTYPE_STREMPTY_LENGTH As String = "StrEmpty V.S. Length"
 	Public Const COMPNAME_STREMPTY_LENGTH As String = "空文字比較(StrEmpty vs Length)"
+	Public Const COMPTYPE_ISNULLOREMPTY_LENGTH As String = "IsNullOrEmpty V.S. Length"
+	Public Const COMPNAME_ISNULLOREMPTY_LENGTH As String = "空文字比較(IsNullOrEmpty V.S. Length)"
 	Public Const COMPTYPE_STRINGCOMP_STRINGEQUAL_EQUAL As String = "StrComp vs StringEquals"
 	Public Const COMPNAME_STRINGCOMP_STRINGEQUAL_EMPTY As String = "文字列比較(StrComp vs StringEquals)"
 	Public Const COMPTYPE_STRINGCOMP_STRINGEQUAL As String = "StrComp vs StringEquals"
@@ -27,8 +29,8 @@ Module modDefine
 	Public Const COMPNAME_MID_LEFT As String = "Mid V.S. Left"
 	Public Const COMPTYPE_MID_RIGHT As String = "Mid V.S. Right"
 	Public Const COMPNAME_MID_RIGHT As String = "Mid V.S. Right"
-	Public Const COMPTYPE_RIGHT_PADEDRIGHT As String = "Right V.S. PadRight"
-	Public Const COMPNAME_RIGHT_PADEDRIGHT As String = "Right V.S. PadRight"
+	Public Const COMPTYPE_RIGHT_PADEDRIGHT As String = "Right V.S. PadLeft"
+	Public Const COMPNAME_RIGHT_PADEDRIGHT As String = "Right V.S. PadLeft"
 	Public Const COMPTYPE_PADEDRIGHT_FORMAT As String = "PadRight V.S. Format"
 	Public Const COMPNAME_PADEDRIGHT_FORMAT As String = "PadRight V.S. Format"
 
@@ -56,6 +58,7 @@ Module modDefine
 		StringVsStringBuilder
 		StringBuilderVsStringBuilderCapacity
 		StringEmptyVsLength
+		IsNullOrEmptyVsLength
 		StrCompVsStringEqualsVerEmpty
 		StrCompVsStringEquals
 		MidVsLeft

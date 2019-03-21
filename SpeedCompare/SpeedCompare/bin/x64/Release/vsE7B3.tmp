@@ -116,13 +116,6 @@ SpeedCompare
 	<param name="settingInfo"></param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:SpeedCompare.modMain.IsNullOrEmptyVsLength(SpeedCompare.clsSetting)">
-	<summary>
- IsNullOrEmptyと文字列長の比較
- </summary>
-	<param name="settingInfo"></param>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="M:SpeedCompare.modMain.StrCompVsStringEqualsVerEmpty(SpeedCompare.clsSetting)">
 	<summary>
  文字比較と文字列一致の速度比較

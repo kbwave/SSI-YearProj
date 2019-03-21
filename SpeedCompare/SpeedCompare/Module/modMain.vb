@@ -79,6 +79,7 @@ Module modMain
 			.Add(modDefine.CompareTypeIndex.StringVsStringBuilder.GetHashCode, modDefine.COMPNAME_STRING_STRINGBUILDER)
 			.Add(modDefine.CompareTypeIndex.StringBuilderVsStringBuilderCapacity.GetHashCode, modDefine.COMPNAME_STRINGBUILDER_CAPACITY)
 			.Add(modDefine.CompareTypeIndex.StringEmptyVsLength.GetHashCode, modDefine.COMPNAME_STREMPTY_LENGTH)
+			.Add(modDefine.CompareTypeIndex.IsNullOrEmptyVsLength.GetHashCode, modDefine.COMPNAME_ISNULLOREMPTY_LENGTH)
 			.Add(modDefine.CompareTypeIndex.StrCompVsStringEqualsVerEmpty.GetHashCode, modDefine.COMPNAME_STRINGCOMP_STRINGEQUAL_EMPTY)
 			.Add(modDefine.CompareTypeIndex.StrCompVsStringEquals.GetHashCode, modDefine.COMPNAME_STRINGCOMP_STRINGEQUAL)
 			.Add(modDefine.CompareTypeIndex.MidVsLeft.GetHashCode, modDefine.COMPNAME_MID_LEFT)
@@ -261,6 +262,9 @@ Module modMain
 			Case modDefine.CompareTypeIndex.StringEmptyVsLength
 				resultInfo = StringEmptyVsLength(settingInfo)
 
+			Case modDefine.CompareTypeIndex.IsNullOrEmptyVsLength
+				resultInfo = IsNullOrEmptyVsLength(settingInfo)
+
 			Case modDefine.CompareTypeIndex.StrCompVsStringEqualsVerEmpty
 				resultInfo = StrCompVsStringEqualsVerEmpty(settingInfo)
 
@@ -412,6 +416,48 @@ Module modMain
 				If EmptyString.Length = 0 Then
 
 				End If
+			Next
+			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
+		Next
+
+		Return resultInfo
+	End Function
+
+	''' <summary>
+	''' IsNullOrEmptyと文字列長の比較
+	''' </summary>
+	''' <param name="settingInfo"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	Private Function IsNullOrEmptyVsLength(ByVal settingInfo As clsSetting) As clsResult
+		Dim resultInfo As clsResult = Nothing
+		Dim EmptyString As String = String.Empty
+
+		resultInfo = New clsResult
+
+		For testNum As Integer = 1 To settingInfo.TestNum
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				If String.IsNullOrEmpty(EmptyString) Then
+
+				End If
+			Next
+			resultInfo.AddResultA(modMain.GetWatchTimerMicroSec())
+
+			modMain.ResetStopWatch()
+			modMain.StartStopWatch()
+			For loopNum As Long = 1& To settingInfo.LoopNum
+				'If Not IsNothing(EmptyString) Then
+				'	If EmptyString.Length = 0 Then
+
+				'	End If
+				'End If
+				If EmptyString.Length = 0 Then
+
+				End If
+				
 			Next
 			resultInfo.AddResultB(modMain.GetWatchTimerMicroSec())
 		Next
