@@ -1,0 +1,11 @@
+D:\VS2013_project\Projects\kbwaveODBCtest\kbwaveODBCtest\bin\x64\Debug\kbwaveODBCtest.exe.config
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\bin\x64\Debug\kbwaveODBCtest.exe.config
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\bin\x64\Debug\kbwaveODBCtest.exe
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\bin\x64\Debug\kbwaveODBCtest.pdb
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\bin\x64\Debug\kbwaveODBCtest.xml
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\obj\x64\Debug\kbwaveODBCtest.windowMain.resources
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\obj\x64\Debug\kbwaveODBCtest.Resources.resources
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\obj\x64\Debug\kbwaveODBCtest.vbproj.GenerateResource.Cache
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\obj\x64\Debug\kbwaveODBCtest.exe
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\obj\x64\Debug\kbwaveODBCtest.xml
+C:\Users\林 知宏\Documents\Visual Studio 2013\Projects\kbwaveODBCtest\kbwaveODBCtest\obj\x64\Debug\kbwaveODBCtest.pdb

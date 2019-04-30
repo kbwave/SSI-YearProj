@@ -1,0 +1,210 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+kbwaveODBCtest
+</name>
+</assembly>
+<members>
+<member name="M:kbwaveODBCtest.IClonekbwave.Clone``1">
+	<summary>
+ 複製
+ </summary>
+	<typeparam name="T"></typeparam>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:kbwaveODBCtest.IClonekbwave">
+	<summary>
+ クローンインタフェース
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.ITableClass.GetData">
+	<summary>
+ DBからデータを取得
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.ITableClass.RegistData">
+	<summary>
+ DBへデータを登録
+ </summary>
+	<remarks></remarks>
+</member><member name="T:kbwaveODBCtest.ITableClass">
+	<summary>
+ テーブルクラスインタフェース
+ </summary>
+	<remarks>
+ Need File:
+ -&gt;comIClone.vb
+ </remarks>
+</member><member name="M:kbwaveODBCtest.firstDBpersonTable.GetData">
+	<summary>
+ DBからデータ取得
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.firstDBpersonTable.RegistData">
+	<summary>
+ DBでデータ登録
+ </summary>
+	<remarks></remarks>
+</member><member name="P:kbwaveODBCtest.firstDBpersonTable.No">
+	<summary>
+ No
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:kbwaveODBCtest.firstDBpersonTable.Name">
+	<summary>
+ 氏名
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:kbwaveODBCtest.firstDBpersonTable.BirthDay">
+	<summary>
+ 誕生日
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:kbwaveODBCtest.firstDBpersonTable.HavingData">
+	<summary>
+ データを保持しているか否か
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:kbwaveODBCtest.firstDBpersonTable.col">
+	<summary>
+ カラムの列Index定義
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.firstDBpersonTable.#ctor">
+	<summary>
+ Instance
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.firstDBpersonTable.Initialize">
+	<summary>
+ 初期化
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.firstDBpersonTable.Clone">
+	<summary>
+ 複製
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.firstDBpersonTable.DataGetOneRecoad(System.Data.SqlClient.SqlConnection,System.Int32,System.Boolean)">
+	<summary>
+ 主キーを指定してDBからデータ取得
+ </summary>
+	<param name="connection"></param>
+	<param name="no"></param>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.firstDBpersonTable.ToString">
+	<summary>
+ 自身の情報を文字列化
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:kbwaveODBCtest.firstDBpersonTable">
+	<summary>
+ first-DBのperson-Table
+ </summary>
+	<remarks></remarks>
+</member><member name="T:kbwaveODBCtest.DBTableTest">
+	<summary>
+ firstDBに作成したTestテーブルのクラス
+ </summary>
+	<remarks></remarks>
+</member><member name="P:kbwaveODBCtest.My.Resources.Resources.ResourceManager">
+	<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member><member name="P:kbwaveODBCtest.My.Resources.Resources.Culture">
+	<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member><member name="T:kbwaveODBCtest.My.Resources.Resources">
+	<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member><member name="P:kbwaveODBCtest.modMain.ConnectingDB">
+	<summary>
+ DB接続に成功したか否か
+ </summary>
+	<value></value>
+	<returns>True:Connecting DB, False:Not Connecting DB</returns>
+	<remarks></remarks>
+</member><member name="P:kbwaveODBCtest.modMain.Connection">
+	<summary>
+ oleDBConnection
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:kbwaveODBCtest.modMain.TableName">
+	<summary>
+ 全テーブルの名称
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.modMain.Main">
+	<summary>
+ Entry Point
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.modMain.Preparation">
+	<summary>
+ SetUp this module
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.modMain.ConnectDB">
+	<summary>
+ Connect DB
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.modMain.GetTableInfo">
+	<summary>
+ テーブル名を取得
+ </summary>
+	<remarks></remarks>
+</member><member name="T:kbwaveODBCtest.modMain">
+	<summary>
+ 本アプリで使用するメインモジュール
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.windowMain.windowMain_Load(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.windowMain.btnDataGet_Click(System.Object,System.EventArgs)">
+	<summary>
+ データ取得ボタンクリック
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.windowMain.SetUp">
+	<summary>
+ 使用準備
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.windowMain.SetUpSQLConnectionState">
+	<summary>
+ DB接続状態を更新
+ </summary>
+	<remarks></remarks>
+</member><member name="M:kbwaveODBCtest.windowMain.SetTableName">
+	<summary>
+ テーブル名をセット
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>
